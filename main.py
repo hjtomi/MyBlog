@@ -11,7 +11,7 @@ from functools import wraps
 import os
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = os.environ.get("SECRET_KEY")
+app.config['SECRET_KEY'] = os.environ.get("SECRET_KEY", "sqlite:///blog.db")
 ckeditor = CKEditor(app)
 Bootstrap5(app)
 login_manager = LoginManager(app)
